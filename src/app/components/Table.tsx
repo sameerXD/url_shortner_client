@@ -4,6 +4,7 @@ import { IoAddCircleOutline } from "react-icons/io5";
 import {
   IUrl,
   IUser,
+  base_url,
   deleteHash,
   getAllUrls,
   shortenUrl,
@@ -126,7 +127,7 @@ const Table = forwardRef<
   };
 
   const handleCopy = (url: IUrl) => {
-    const fullUrl = `http://localhost:4001/user/redirectUrl/${url.userId}/${url.hash}`;
+    const fullUrl = `${base_url}/user/redirectUrl/${url.userId}/${url.hash}`;
     navigator.clipboard
       .writeText(fullUrl)
       .then(() => {
