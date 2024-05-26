@@ -56,7 +56,6 @@ const Table = forwardRef<
   const handlePostUrl = async () => {
     try {
       setLoading(true);
-      if (!props.user) return;
       await shortenUrl(
         {
           maxUses: newRow.maxUses,
